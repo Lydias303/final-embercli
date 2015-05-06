@@ -1,11 +1,23 @@
-{{model.title}}
+<div class="row">
+  <div class="col-md-10">
+    {{#if isEditing}}
+      {{edit-title type="text" value=model.title focus-out="updateTitle" insert-newline="updateTitle"}}
+        {{else}}
+      <h4>{{model.title}}</h4>
+    {{/if}}
+    <br/>
+  </div>
+</div>
 
-{{#if isEditing}}
-  {{edit-title type="text" value=model.title focus-out="updateTitle" insert-newline="updateTitle"}}
-    {{else}}
-  <h4>{{model.title}}</h4>
-  <a href="#"{{action "editTitle"}}>Edit</a>
-{{/if}}
-<br/>
+<div class="row">
+  <div class="col-md-10">
+    <a href="#"{{action "removeList"}}>Delete</a>
+    <a href="#"{{action "editTitle"}}>Edit</a>
+  </div>
+</div>
 
-<a href="#"{{action "removeList"}}>Delete</a>
+<div class="row">
+  <div class="col-md-10">
+    {{outlet}}
+  </div>
+</div>
