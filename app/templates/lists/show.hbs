@@ -1,0 +1,11 @@
+{{model.title}}
+
+{{#if isEditing}}
+  {{edit-title type="text" value=model.title focus-out="updateTitle" insert-newline="updateTitle"}}
+    {{else}}
+  <h4>{{model.title}}</h4>
+  <a href="#"{{action "editTitle"}}>Edit</a>
+{{/if}}
+<br/>
+
+<a href="#"{{action "removeList"}}>Delete</a>
