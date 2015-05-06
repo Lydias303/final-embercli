@@ -1,3 +1,15 @@
 <h1>My Lists</h1>
-<br/>
-{{outlet}}
+
+<div class="row">
+  <div class="col-md-6">
+    My Lists
+    <ul>
+      {{#each list in model}}
+        <li>{{#link-to "lists.show" list}} {{list.title}} {{/link-to}}</li>
+      {{/each}}
+    </ul>
+  </div>
+  <div class="col-md-6">
+    {{outlet}}
+  </div>
+</div>
